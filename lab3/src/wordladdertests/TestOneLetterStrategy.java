@@ -35,7 +35,7 @@ public class TestOneLetterStrategy {
 	
 	private void runTest() {
 		PrintStream oldOut = System.out;
-		File myResult = new File("mysolution-" + wordfile);
+		File myResult = new File("lab3/src/" + "mysolution-" + wordfile);
 		PrintStream ps = null;
 		try {
 			ps = new PrintStream(myResult);
@@ -46,7 +46,7 @@ public class TestOneLetterStrategy {
 		System.setOut(ps);
 		Main.processRequests(new OneLetterDifference(),wordfile, infile);
 		System.setOut(oldOut);
-		File solution = new File(outfile);		
+		File solution = new File("lab3/src/" + outfile);
 		assertTrue(FileContents.fileCompare(solution,myResult));
 	}
 
